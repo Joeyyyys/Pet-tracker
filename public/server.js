@@ -8,6 +8,10 @@ const publicDir = path.join(__dirname, '..', 'public' ) // what is this doing ? 
 const staticAssets = express.static(publicDir) // used for html and css files
 app.use(staticAssets)
 
+app.get('/pets', (req, res) => {
+    res.send({ message: "Hi, this works" });
+})
+
 app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
+    console.log(`This server is running on, http://localhost:${PORT}`);
 });
