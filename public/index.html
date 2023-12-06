@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>
+            Pet Tracker
+        </h1>
+        <form>
+            <h2>
+                Add A New Pet!
+            </h2>
+            <label for="pet name">
+                Pet Name:
+                <input id="pet name" type="text" name="pet name" required>
+            </label>
+            <label for="profile picture url">
+                Profile Picture:
+                <input id="profile picture url" type="text" name="profile picture url" placeholder="Picture URL" required>
+            </label>
+            <fieldset>
+                <legend>
+                    Species
+                </legend>
+                <label for="Cat">
+                    <input type="radio" name="Species" id="Cat" required>
+                    Cat
+                </label>
+                <label for="Dog">
+                    <input type="radio" name="Species" id="Dog" required>
+                    Dog
+                </label>
+                <label for="Bird">
+                    <input type="radio" name="Species" id="Bird" required>
+                    Bird
+                </label>
+            </fieldset>
+            <label for="friendly">
+                <input type="checkbox" name="friendly" id="friendly">
+                Are they friendly?
+            </label>
+            <button type="submit">Add Pet!</button>
+        </form>
+    </main>
+
+    <style>
+        img { height: 15rem; }
+        sup { color: red; }
+        form, ul { display: flex; gap: 1rem; padding: 1rem; border: 0.1rem solid #000; }
+        form { flex-direction: column; width: fit-content; }
+        #pet-list { flex-wrap: wrap; list-style: none; }
+    </style>
+</body>
+</html>
