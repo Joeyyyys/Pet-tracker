@@ -1,0 +1,17 @@
+{
+  "name": "pet-tracker",
+  "version": "1.0.0",
+  "description": "This is a solo project that will guage my  understanding of knex.js, express.js, and the connection between the front-end and back-end while using the CRUD actions.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon public/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2"
+  }
+}
