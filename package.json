@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js",
+    "kickstart": "npm i && npm run migrate && npm run seed && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
