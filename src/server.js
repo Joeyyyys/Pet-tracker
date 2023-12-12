@@ -13,19 +13,16 @@ app.use(staticAssets) // connects our static page in the
 //     res.send({ message: "Hi, this works" });
 // })
 
-app.post('api/pets', async (req, res) => {
-    const petData = req.body;
+app.post('/pets', async (req, res) => {
+  // const { pet_name, profile_picture, species, is_friendly } = req.body;
+  console.log(req.body)
+    const newPet = await Pets.create(req.body);
+    newPet
+   ? res.status(201).send(newPet)
+   : res.status(500).send({ error: 'Failed to create a new pet' });
+});
   
-    const newPet = await Pets.create(petData);
-    
-    if (newPet) {
-      res.status(201).send(newPet);
-    } else {
-      res.status(500).send({ error: 'Failed to create a new pet' });
-    }
-  });
-  
-  app.get('api/pets', async (req, res) => {
+  app.get('/pets', async (req, res) => {
     const allPets = await Pets.list();
     if (allPets) {
         res.status(200).send(allPets);
@@ -34,7 +31,7 @@ app.post('api/pets', async (req, res) => {
     }
   });
   
-  app.delete('api/pets/:petId', async (req, res) => {
+  app.delete('/pets/:petId', async (req, res) => {
     const petId = req.params.petId;
     const removedPet = await Pets.remove(petId);
   
