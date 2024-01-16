@@ -9,12 +9,7 @@ const publicDir = path.join(__dirname, '..', 'public' ) // what is this doing ? 
 const staticAssets = express.static(publicDir) // used for html and css files
 app.use(staticAssets) // connects our static page in the 
 
-// app.get('/pets', (req, res) => {
-//     res.send({ message: "Hi, this works" });
-// })
-
 app.post('/pets', async (req, res) => {
-  // const { pet_name, profile_picture, species, is_friendly } = req.body;
   console.log(req.body)
     const newPet = await Pets.create(req.body);
     newPet
